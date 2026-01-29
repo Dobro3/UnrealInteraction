@@ -1,0 +1,3 @@
+[submodule "Source/InteractionModule"]
+	path = Source/InteractionModule
+	url = https://github.com/Dobro3/InteractionModule.git
