@@ -7,6 +7,7 @@
 #include "GameFramework/Actor.h"
 #include "SingleInteractionTester.generated.h"
 
+class UInteractionHintComponent;
 class UInteractHandlerComponent;
 class UStaticMeshComponent;
 
@@ -28,6 +29,11 @@ protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
 	TObjectPtr<UInteractHandlerComponent> InteractableComponent;
 
+	/// Simple mesh for visual representation and collision handling.
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Components)
 	TObjectPtr<UStaticMeshComponent> CubeMesh;
+
+	/// Visual interact hint.
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Components)
+	TObjectPtr<UInteractionHintComponent> InteractionHint;
 };

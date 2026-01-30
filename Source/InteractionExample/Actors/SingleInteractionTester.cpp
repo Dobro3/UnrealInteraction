@@ -5,6 +5,7 @@
 
 #include "InteractHandlerComponent.h"
 #include "Conditions/Examples/InteractionConditionAlwaysCan.h"
+#include "InteractionExample/Components/InteractionHintComponent.h"
 #include "InteractionExample/InteractionObjects/Actions/SpawnParticlesAction.h"
 #include "Net/UnrealNetwork.h"
 
@@ -27,6 +28,11 @@ ASingleInteractionTester::ASingleInteractionTester()
 	{
 		CubeMesh->SetStaticMesh(CubeMeshFinder.Object);
 	}
+
+	InteractionHint = CreateDefaultSubobject<UInteractionHintComponent>(TEXT("InteractionHintComponent"));
+	InteractionHint->SetupAttachment(CubeMesh);
+	constexpr float DefaultHintOffset = 100.f;
+	InteractionHint->SetRelativeLocation(FVector::UpVector * DefaultHintOffset);
 }
 
 void ASingleInteractionTester::GetLifetimeReplicatedProps(TArray<class FLifetimeProperty>& OutLifetimeProps) const
