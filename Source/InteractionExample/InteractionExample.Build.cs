@@ -10,6 +10,6 @@ public class InteractionExample : ModuleRules
 
 		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "EnhancedInput" });
 		
-		PrivateDependencyModuleNames.AddRange(new string[] { "InteractionModule" });
+		PrivateDependencyModuleNames.AddRange(new string[] { "InteractionModule", "Niagara" });
 	}
 }

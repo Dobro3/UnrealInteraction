@@ -87,6 +87,9 @@ void AInteractionExampleCharacter::SetupPlayerInputComponent(UInputComponent* Pl
 
 		// Looking
 		EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &AInteractionExampleCharacter::Look);
+
+		// Interacting
+		EnhancedInputComponent->BindAction(InteractAction, ETriggerEvent::Started, this, &AInteractionExampleCharacter::CallInteract);
 	}
 	else
 	{
@@ -127,5 +130,13 @@ void AInteractionExampleCharacter::Look(const FInputActionValue& Value)
 		// add yaw and pitch input to controller
 		AddControllerYawInput(LookAxisVector.X);
 		AddControllerPitchInput(LookAxisVector.Y);
+	}
+}
+
+void AInteractionExampleCharacter::CallInteract()
+{
+	if (IsValid(InteractionComponent))
+	{
+		InteractionComponent->TryInteractWithCurrentTarget();
 	}
 }
