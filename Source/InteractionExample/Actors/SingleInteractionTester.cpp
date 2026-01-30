@@ -17,7 +17,7 @@ ASingleInteractionTester::ASingleInteractionTester()
 
 	InteractableComponent = CreateDefaultSubobject<UInteractHandlerComponent>(TEXT("InteractableComponent"));
 	InteractableComponent->SetInteractionCondition(CreateDefaultSubobject<UInteractionConditionAlwaysCan>(TEXT("InteractionConditionAlwaysCan")));
-	InteractableComponent->SetInteractionAction(CreateDefaultSubobject<USpawnParticlesAction>(TEXT("SpawnParticlesAction")));
+	InteractableComponent->SetInteractAction(CreateDefaultSubobject<USpawnParticlesAction>(TEXT("SpawnParticlesAction")));
 
 	CubeMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("CubeMesh"));
 	SetRootComponent(CubeMesh);
